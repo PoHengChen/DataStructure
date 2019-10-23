@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sort.h">
+    <ClInclude Include="mysort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
