@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointer_Array", "tmo\tmo.vc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Vector_mergesort", "Vector_mergesort\Vector_mergesort.vcxproj", "{7276675A-3845-44D4-B209-BC660D5E6942}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "String", "String\String.vcxproj", "{B6CED193-F42C-420D-A3FA-6320B17ECEDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{7276675A-3845-44D4-B209-BC660D5E6942}.Release|x64.Build.0 = Release|x64
 		{7276675A-3845-44D4-B209-BC660D5E6942}.Release|x86.ActiveCfg = Release|Win32
 		{7276675A-3845-44D4-B209-BC660D5E6942}.Release|x86.Build.0 = Release|Win32
+		{B6CED193-F42C-420D-A3FA-6320B17ECEDB}.Debug|x64.ActiveCfg = Debug|x64
+		{B6CED193-F42C-420D-A3FA-6320B17ECEDB}.Debug|x64.Build.0 = Debug|x64
+		{B6CED193-F42C-420D-A3FA-6320B17ECEDB}.Debug|x86.ActiveCfg = Debug|Win32
+		{B6CED193-F42C-420D-A3FA-6320B17ECEDB}.Debug|x86.Build.0 = Debug|Win32
+		{B6CED193-F42C-420D-A3FA-6320B17ECEDB}.Release|x64.ActiveCfg = Release|x64
+		{B6CED193-F42C-420D-A3FA-6320B17ECEDB}.Release|x64.Build.0 = Release|x64
+		{B6CED193-F42C-420D-A3FA-6320B17ECEDB}.Release|x86.ActiveCfg = Release|Win32
+		{B6CED193-F42C-420D-A3FA-6320B17ECEDB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

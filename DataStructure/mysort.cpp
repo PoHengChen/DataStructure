@@ -21,60 +21,53 @@ void mysort::swap(int* x, int* y) {
 void mysort::showdata(int* p) {
 	for (int i = 0; i < 6; i++)
 		cout << setw(3) << *(p+i);
-	std::cout << endl;
+	cout << endl;
 }
 
 void mysort::bubblesort(int* p) {
-	for (int i = size - 1; i > 0; i--) { // n elements need (n-1) times data scans
-		for (int j = 0; j < i; j++) {
-			if (*(p+j) > *(p+j+1)) {
+	for (int i = size - 1; i > 0; i--)  // n elements need (n-1) times data scans
+		for (int j = 0; j < i; j++) 
+			if (*(p+j) > *(p+j+1)) 
 				swap((p + j), (p + j + 1));
-			}
-		}
-	}
 }
 
-void mysort::bubblesort2(int data[]) {
+void mysort::bubblesort2(int* p) {
 	bool flag = 0;
 	for (int i = size - 1; i > 0; i--) { // n elements need (n-1) times data scans
-		for (int j = 0; j < i; j++) {
-			if (data[j] > data[j + 1]) {
-				swap(&data[j], &data[j + 1]);
-			}
-		}
+		for (int j = 0; j < i; j++) 
+			if (*(p+j) > *(p+j+1)) 
+				swap((p + j), (p + j + 1));
 		if (flag)
 			break;
 	}
 }
 
-void mysort::selectionsort(int data[]) {
+void mysort::selectionsort(int* p) {
 	for (int i = 0; i < size-1; i++) {
 		int min_ind = i; // renew index of minimum value
 		for (int j = i+1; j < size; j++)
-			if (data[j] < data[min_ind])
+			if ( *(p+j) < *(p+min_ind) )
 				min_ind = j;
-		swap(&data[min_ind], &data[i]);
+		swap((p+min_ind), (p+i));
 	}
 }
 
 // ========== Insertion sort =============
-//					 j			 i
+//					 			 i
+//					 j
 // data [0] [1] [2] [3] [4] [5] [6] [7] 
 //		 1   2   3   4   10  12  5   6
-//					   ^		 |
+//					   ^			 |
 //					   |_________|
 // =======================================
-void mysort::insertionsort(int data[]) {
+void mysort::insertionsort(int* p) {
+	int j;
 	for (int i = 1; i < size; i++) { //start from second element and compare with first 
-		int j = 0;
-		for (j = i-1; j >= 0; j--) { // first element that is data[i] is larger than data[j]
-			if (data[i] > data[j]) 
+		for (j = i-1; j >= 0; j--)  //first element that is data[i] is larger than data[j]
+			if (*(p + i) > *(p + j))
 				break;
-		}
-		int tmp = data[i];
-		for (int k = i; k > j+1; k--)
-			data[k] = data[k-1];
-		data[j+1] = tmp;
+		for (int k = i; k >= j+2; k--) 
+			swap((p+k),(p+k-1));
 	}
 }
 
@@ -87,54 +80,52 @@ void mysort::insertionsort(int data[]) {
 //					     |_______|
 // learn from https://www.dyclassroom.com/sorting-algorithm/shell-sort
 // =======================================================
-void mysort::shellsort(int data[]) {
+void mysort::shellsort(int* p) {
 	int gap, i, j, tmp;
-	for (gap = size/2; gap>0; gap /= 2) { // gap=size/2 (round down)
-		for (i = gap; i < size; i++) { // 
-			tmp = data[i];
+	for (gap = size/2; gap > 0; gap /= 2)  // gap=size/2 (round down)
+		for (i = gap; i < size; i++)  // 
 			// if function can be replace by for/while
 			// compare current element with front gap value
 			// ALA front gap value is not larger, forloop won't be continue
-			for (j = i; j - gap >= 0 && data[j - gap] > tmp; j-=gap) 
-				data[j] = data[j-gap];
-			data[j] = tmp;
-		}
-	}
+			for (j = i; j - gap >= 0 ; j -= gap)
+				if(*(p + j - gap) > * (p + j))
+					swap((p+j-gap), (p+j));
 }
 
 // return pivot (index of right position)
-int mysort::partition(int data[], int left, int right) {
+int mysort::partition(int* p, int left, int right) {
 	int i = left, j = right;
 	int pivot = left; //first element as pivot
 	while (true) {
 		//index of fist element larger than first element from left
-		while ((data[i] <= data[pivot]) && (i<right)) //add a equal condition to avoid i = pivot
+		while ((*(p+i) <= *(p + pivot)) && (i<right)) //add a equal condition to avoid i = pivot
 			i++;
 		//fist element small/equal than first element search from right
-		while (data[j] >  data[pivot])
+		while (*(p + j) > * (p + pivot))
 			j--;
 
 		if (i >= j) {
-			swap(&data[pivot], &data[j]);
+			swap((p+pivot), (p+j));
 			pivot = j;
 			return pivot;
 		}
-		swap(&data[i], &data[j]);
+		swap((p+i), (p+j));
 	}
 }
 
-void mysort::quicksort1(int data[], int left, int right) {
+void mysort::quicksort1(int* p, int left, int right) {
 	int pivot;
 	if (left < right) { //prevent only one element enter
-		pivot = partition(data, left, right);
-		quicksort1(data, left, pivot - 1);
-		quicksort1(data, pivot + 1, right);
+		pivot = partition(p, left, right);
+		quicksort1(p, left, pivot - 1);
+		quicksort1(p, pivot + 1, right);
 	}
 }
 
-void mysort::quicksort2(int data[], int left, int right) {
+void mysort::quicksort2(int* p, int left, int right) {
 
 } 
+
 //============== Mergesort(recursive method) ===================
 //merge and sort subarrays to reconstruct array from index right to left
 const int Max = 1000;

@@ -21,9 +21,27 @@
     <ClCompile Include="mysort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mysearch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bit_wise.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mysort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mysearch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data_type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bit_wise.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

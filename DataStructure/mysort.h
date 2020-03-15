@@ -2,7 +2,7 @@
 
 #ifndef MYSORT_H
 #define MYSORT_H
-#include <iostream>
+
 #include <vector>
 
 class mysort {

@@ -123,10 +123,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bit_wise.cpp" />
+    <ClCompile Include="data_type.cpp" />
+    <ClCompile Include="mysearch.cpp" />
     <ClCompile Include="mysort.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bit_wise.h" />
+    <ClInclude Include="data_type.h" />
+    <ClInclude Include="mysearch.h" />
     <ClInclude Include="mysort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
