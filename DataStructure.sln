@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Vector_mergesort", "Vector_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "String", "String\String.vcxproj", "{B6CED193-F42C-420D-A3FA-6320B17ECEDB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "operator_overloading", "operator_overloading\operator_overloading.vcxproj", "{56BE4EC3-FE43-4B88-9EDF-B146A7155C71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{B6CED193-F42C-420D-A3FA-6320B17ECEDB}.Release|x64.Build.0 = Release|x64
 		{B6CED193-F42C-420D-A3FA-6320B17ECEDB}.Release|x86.ActiveCfg = Release|Win32
 		{B6CED193-F42C-420D-A3FA-6320B17ECEDB}.Release|x86.Build.0 = Release|Win32
+		{56BE4EC3-FE43-4B88-9EDF-B146A7155C71}.Debug|x64.ActiveCfg = Debug|x64
+		{56BE4EC3-FE43-4B88-9EDF-B146A7155C71}.Debug|x64.Build.0 = Debug|x64
+		{56BE4EC3-FE43-4B88-9EDF-B146A7155C71}.Debug|x86.ActiveCfg = Debug|Win32
+		{56BE4EC3-FE43-4B88-9EDF-B146A7155C71}.Debug|x86.Build.0 = Debug|Win32
+		{56BE4EC3-FE43-4B88-9EDF-B146A7155C71}.Release|x64.ActiveCfg = Release|x64
+		{56BE4EC3-FE43-4B88-9EDF-B146A7155C71}.Release|x64.Build.0 = Release|x64
+		{56BE4EC3-FE43-4B88-9EDF-B146A7155C71}.Release|x86.ActiveCfg = Release|Win32
+		{56BE4EC3-FE43-4B88-9EDF-B146A7155C71}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
